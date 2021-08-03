@@ -1,0 +1,426 @@
+/*======================== Reset Styles ============*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/*======================== Variables Styles ============*/
+
+:root {
+  /*===== Colors =====*/
+  --base-pink: hsl(340, 82%, 52%);
+  --dark-pink: hsl(339, 100%, 48%);
+
+  --title-color: hsl(0, 0%, 13%);
+  --background-color: hsl(120, 4%, 95%);
+  --white-color: hsl(0, 0%, 100%);
+  /*===== Fonts =====*/
+
+  --font-josefin: 'Josefin Sans', sans-serif;
+  --font-lato: 'Lato', sans-serif;
+
+  /*===== Em Breves =====*/
+}
+
+/*======================== Default Styles ============*/
+
+.container {
+  padding: 0.9375rem;
+}
+
+.section {
+  padding: 3.75rem 0;
+}
+
+.title {
+  font-size: 1.375rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 0.9375rem;
+  color: var(--title-color);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--title-color);
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.button {
+  background-color: var(--base-pink);
+  color: var(--white-color);
+  display: inline-block;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.25rem;
+  margin: 0.9375rem 0.375rem 0 0.375rem;
+  line-height: 1.21rem;
+}
+.button:hover {
+  background-color: var(--dark-pink);
+}
+
+#header.container {
+  margin: 0.9375rem 0;
+}
+
+/*====  NAVIGATION ============================ */
+
+nav {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1;
+}
+
+nav ul li {
+  text-align: center;
+}
+
+nav ul li a {
+  transition: color 0.2s;
+  position: relative;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--title-color);
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: var(--dark-pink);
+
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem;
+
+  transition: width 0.2s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 100%;
+}
+
+nav .menu {
+  opacity: 0;
+  visibility: hidden;
+  top: -20rem;
+  transition: 0.2s;
+}
+
+nav .menu ul {
+  display: none;
+}
+
+/* Mostrar menu */
+nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+
+  background: var(--white-color);
+
+  height: 100vh;
+  width: 100vw;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: grid;
+  place-content: center;
+}
+
+nav.show .menu ul {
+  display: grid;
+}
+
+nav.show ul.grid {
+  gap: 4rem;
+}
+
+/* toggle menu */
+.toggle {
+  font-size: 2.25rem;
+  cursor: pointer;
+}
+
+nav .icon-close {
+  visibility: hidden;
+  opacity: 0;
+  color: var(--title-color);
+  position: absolute;
+  top: -1.5rem;
+  right: 1.5rem;
+
+  transition: 0.2s;
+}
+
+nav.show div.icon-close {
+  visibility: visible;
+  opacity: 1;
+  top: 1.5rem;
+}
+
+.scroll {
+  background: var(--title-color);
+}
+/*======================== Carousel principal Styles ============*/
+
+#carousel-principal {
+  text-align: center;
+  height: 550px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+#carousel-principal img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  height: 550px;
+}
+.carousel-caption p {
+  font-size: 1rem;
+  color: var(--white-color);
+  line-height: 1.5rem;
+  font-family: var(--font-lato);
+}
+
+.carousel-caption h2 {
+  margin-top: 1.875rem;
+  margin-bottom: 0.5rem;
+  color: var(--white-color);
+  font-family: var(--font-josefin);
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  text-transform: uppercase;
+}
+
+/* .carousel-caption {
+  padding-top: 3.75rem;
+  padding-bottom: 1.25rem;
+} */
+
+/*======================== Countdown Styles ============*/
+#countdown {
+  display: grid;
+  place-items: center;
+}
+
+#countdown .container-countdown {
+  display: grid;
+  margin-top: 0.9375rem;
+  margin-bottom: 3.125rem;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  /* flex-wrap: wrap; */
+}
+
+#countdown .container-countdown div {
+  width: 5.625rem;
+  height: 5.625rem;
+  padding: 0.8125rem;
+  margin: 0.9375rem;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+
+  display: grid;
+  place-content: center;
+}
+
+#countdown .container-countdown div p {
+  display: grid;
+  font-weight: 700;
+  font-size: 1.72rem;
+  text-align: center;
+  font-family: var(--font-lato);
+  gap: 0.625rem;
+}
+
+#countdown .container-countdown div p span {
+  font-weight: normal;
+  font-size: 0.9375rem;
+  text-align: center;
+}
+
+/*======================== Services Styles ============*/
+
+#services {
+}
+#services .card-service {
+  padding: 2.5rem 1.75rem;
+}
+#services .card-service + div {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+#services .card-service i {
+  color: var(--base-pink);
+  font-size: 3rem;
+}
+
+#services .card-service h3 {
+  font-size: 1.25rem;
+  color: var(--title-color);
+  margin-top: 0.9375rem;
+  margin-bottom: 0.625rem;
+}
+
+#services .card-service p {
+  font-size: 0.875rem;
+  color: var(--title-color);
+}
+
+#services .content .title {
+  position: relative;
+}
+
+#services .content .title::before {
+  content: '';
+  width: 3rem;
+  height: 1px;
+  background: var(--base-pink);
+
+  position: absolute;
+  left: 45%;
+  bottom: -0.4rem;
+}
+
+#services .content .title::after {
+  content: '';
+  width: 3rem;
+  height: 1px;
+  background: var(--base-pink);
+
+  position: absolute;
+  text-align: center;
+  left: 40%;
+  bottom: 0;
+}
+
+#services .content .subtitle {
+  padding-top: 0.5rem;
+}
+
+/*======================== Events Styles ============*/
+
+#events {
+  padding: 0 0.9375rem;
+}
+
+#events .content .title {
+  position: relative;
+}
+
+#events .content .title::before {
+  content: '';
+  width: 3rem;
+  height: 1px;
+  background: var(--base-pink);
+
+  position: absolute;
+  left: 45%;
+  bottom: -0.4rem;
+}
+
+#events .content .title::after {
+  content: '';
+  width: 3rem;
+  height: 1px;
+  background: var(--base-pink);
+
+  position: absolute;
+  text-align: center;
+  left: 40%;
+  bottom: 0;
+}
+
+#events .content .subtitle {
+  padding-top: 0.5rem;
+}
+
+#events .card-event {
+  padding: 0.625rem;
+  margin-bottom: 1.875rem;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+#events .card-event .about {
+  padding: 1.25rem;
+}
+
+#events .card-event .about h3 {
+  margin-bottom: 0.8rem;
+  font-family: var(--font-josefin);
+  color: var(--title-color);
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+#events .card-event .about p {
+  margin-bottom: 0.8rem;
+  font-family: var(--font-lato);
+  font-size: 0.875rem;
+  color: var(--title-color);
+}
+#events .card-event .about a {
+  font-family: var(--font-lato);
+}
+
+/*======================== Status Styles ============*/
+
+#status {
+  background-color: var(--dark-pink);
+  color: var(--white-color);
+  text-transform: uppercase;
+}
+
+#status .status-container {
+  padding: 0.9375rem 0;
+}
+
+#status .status-container i {
+  font-size: 3.75rem;
+}
+
+#status .status-container h3 {
+  font-size: 0.9375rem;
+  padding: 1.5rem 0 0.9375rem 0;
+  font-family: var(--font-lato);
+}
+
+#status .status-container p {
+  font-size: 0.75rem;
+  font-family: var(--font-lato);
+}
