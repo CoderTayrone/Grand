@@ -19,6 +19,10 @@ img {
   height: auto;
 }
 
+html {
+  scroll-behavior: scroll;
+}
+
 /*======================== Variables Styles ============*/
 
 :root {
@@ -423,4 +427,235 @@ nav.show div.icon-close {
 #status .status-container p {
   font-size: 0.75rem;
   font-family: var(--font-lato);
+}
+
+/*======================== Schedules Styles ============*/
+
+#schedules {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  background: var(--background-color);
+}
+
+#schedules .content .title {
+  position: relative;
+}
+
+#schedules .content .title::before {
+  content: '';
+  width: 3rem;
+  height: 1px;
+  background: var(--base-pink);
+
+  position: absolute;
+  left: 45%;
+  bottom: -0.4rem;
+}
+
+#schedules .content .title::after {
+  content: '';
+  width: 3rem;
+  height: 1px;
+  background: var(--base-pink);
+
+  position: absolute;
+  text-align: center;
+  left: 40%;
+  bottom: 0;
+}
+
+#schedules .content .subtitle {
+  padding-top: 0.5rem;
+}
+
+#schedules .day-schedules-container {
+  background-color: var(--white-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#schedules .day-schedule {
+  padding: 1.25rem;
+  font-family: var(--font-lato);
+  width: 100%;
+}
+
+#schedules .day-schedule + div {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#schedules .day-schedule.active,
+#schedules .day-schedule:hover {
+  background: var(--dark-pink);
+  color: var(--white-color);
+  transition: all 0.3s;
+}
+
+#schedules .day-schedule h3 {
+  margin-bottom: 0.8rem;
+  font-size: 0.9375rem;
+  text-transform: uppercase;
+}
+
+#schedules .day-schedule p {
+  margin-bottom: 0.8rem;
+  font-size: 0.875rem;
+  opacity: 0.5;
+}
+
+#schedules .assign-schedule-container {
+  background-color: var(--white-color);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#schedules .assign-schedule {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-lato);
+}
+#schedules .assign-schedule + div {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#schedules .assign-schedule .image img {
+  clip-path: circle();
+  width: 72px;
+  margin-right: 1.25rem;
+}
+
+#schedules .assign-schedule .content span {
+  color: #777777;
+  font-size: 0.8125rem;
+}
+
+#schedules .assign-schedule .content p {
+  font-size: 0.875rem;
+  color: var(--title-color);
+  margin-bottom: 0.8rem;
+  margin-top: 0.3125rem;
+}
+
+/*======================== Who Speaking Styles ============*/
+#who-speaking {
+}
+
+#who-speaking .content .title {
+  position: relative;
+}
+
+#who-speaking .content .title::before {
+  content: '';
+  width: 3rem;
+  height: 1px;
+  background: var(--base-pink);
+
+  position: absolute;
+  left: 45%;
+  bottom: -0.4rem;
+}
+
+#who-speaking .content .title::after {
+  content: '';
+  width: 3rem;
+  height: 1px;
+  background: var(--base-pink);
+
+  position: absolute;
+  text-align: center;
+  left: 40%;
+  bottom: 0;
+}
+#who-speaking .who-speaking-container {
+  padding: 0.9375rem;
+}
+
+#who-speaking .who-speaking {
+  padding: 0.625rem;
+  margin: 0.9375rem 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  position: relative;
+}
+
+#who-speaking .who-speaking .image {
+  position: relative;
+}
+
+#who-speaking .who-speaking .image:hover::after {
+  content: '';
+  width: 100%;
+  height: 99%;
+  background: #2f2f2f;
+  opacity: 0.7;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#who-speaking .who-speaking .content {
+  padding: 0.9375rem 1.25rem;
+  font-family: var(--font-lato);
+  background: var(--background-color);
+  position: absolute;
+  left: 0.625rem;
+  bottom: 0.8125rem;
+}
+
+#who-speaking .who-speaking .content h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3125rem;
+  color: var(--title-color);
+}
+
+#who-speaking .who-speaking .content span {
+  font-size: 0.875rem;
+  color: #888888;
+}
+
+/*========================Our Gallery Styles ============*/
+#events-gallery {
+  background: var(--background-color);
+}
+#events-gallery .content .title {
+  position: relative;
+}
+
+#events-gallery .content .title::before {
+  content: '';
+  width: 3rem;
+  height: 1px;
+  background: var(--base-pink);
+
+  position: absolute;
+  left: 45%;
+  bottom: -0.4rem;
+}
+
+#events-gallery .content .title::after {
+  content: '';
+  width: 3rem;
+  height: 1px;
+  background: var(--base-pink);
+
+  position: absolute;
+  text-align: center;
+  left: 40%;
+  bottom: 0;
+}
+
+#events-gallery .event-gallery {
+  position: relative;
+}
+
+#events-gallery .event-gallery:hover::after {
+  content: '';
+  width: 100%;
+  height: 99%;
+  background: var(--base-pink);
+  opacity: 0.7;
+
+  position: absolute;
+  top: 0;
+  left: 0;
 }
