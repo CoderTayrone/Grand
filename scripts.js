@@ -18,6 +18,7 @@ for (const link of links) {
 
 /* mudar o header da página quando der scroll */
 const header = document.querySelector('#header nav')
+const headerA = document.querySelector('#header')
 const navHeight = header.offsetHeight
 
 function changeHeaderWhenScroll() {
@@ -29,6 +30,33 @@ function changeHeaderWhenScroll() {
     header.classList.remove('scroll')
   }
 }
+
+/* ScrollReveal: Mostrar elementos quando der scroll na página */
+const scrollReveal = ScrollReveal({
+  origin: 'top',
+  distance: '30px',
+  duration: 700,
+  reset: true
+})
+
+scrollReveal.reveal(
+  `#carousel-principal .carousel-caption,
+  #countdown .container-countdown,
+  #services .content, #services .card-service,
+  #events .content, #events .card-event,
+  #status .status-container,
+  #who-speaking .container-who-speaking .content, #who-speaking .image, #who-speaking .who-speaking-container .content,
+  #events-gallery .content ,#events-gallery .event-gallery,
+  #sponsors .content, #sponsors .sponsor,
+  #pricing .content, #pricing .card-pricing,
+  #event-guideline .content ,#event-guideline .image, #event-guideline .content-container,
+  #news-articles .content, #news-articles .image,#news-articles .content-news, 
+  #signup .title, #signup form
+
+
+  `,
+  { interval: 100 }
+)
 
 /* When Scroll */
 window.addEventListener('scroll', function () {

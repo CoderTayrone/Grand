@@ -255,7 +255,7 @@ nav.show div.icon-close {
   margin-top: 0.9375rem;
   margin-bottom: 3.125rem;
   justify-content: center;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
 }
 
 #countdown .container-countdown div {
@@ -268,7 +268,7 @@ nav.show div.icon-close {
 
   display: grid;
   place-content: center;
-  /* flex: 0 0 91px; */
+  /* flex: 0 0 91px;  */
 }
 
 #countdown .container-countdown div p {
@@ -1328,6 +1328,37 @@ footer .footer-copy {
   :root {
     --size-screen: 1140px;
   }
+
+  /* navigation */
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+
+  nav .menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  nav .menu ul li a {
+    color: white;
+  }
+
+  nav .menu ul li a.title {
+    font: 400 1rem var(--white-color);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  nav .menu ul li a.title.active {
+    font-weight: bold;
+    -webkit-font-smoothing: auto;
+  }
+
+  nav .icon-menu {
+    display: none;
+  }
+
   .size {
     max-width: var(--size-screen);
     margin: auto;
@@ -1343,6 +1374,12 @@ footer .footer-copy {
   #carousel-principal,
   #carousel-principal img {
     height: 850px;
+  }
+  #carousel-principal .carousel-caption h2 {
+    font-size: 3rem;
+  }
+  #carousel-principal .carousel-caption p {
+    font-size: 1.25rem;
   }
   #services .card-service + div {
     border-left: 1px solid rgba(0, 0, 0, 0.1);
